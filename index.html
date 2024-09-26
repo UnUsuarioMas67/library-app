@@ -38,6 +38,36 @@
         </tr> -->
       </tbody>
     </table>
+
+    <dialog>
+      <form method="dialog">
+        <p class="form-title">Add New Book</p>
+
+        <p>
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" required>
+        </p>
+
+        <p>
+          <label for="author">Author</label>
+          <input type="text" name="author" id="author" required>
+        </p>
+
+        <p>
+          <label for="pages">Pages</label>
+          <input type="number" name="pages" id="pages" min="0" required>
+        </p>
+
+        <p>
+          <label for="finished">
+            <input type="checkbox" name="finished" id="finished">
+            Finished reading
+          </label>
+        </p>
+
+        <input type="submit" value="Add">
+      </form>
+    </dialog>
   </main>
 
   <script src="index.js"></script>
