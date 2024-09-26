@@ -1,25 +1,13 @@
 const myLibrary = [
-  new Book(
-    "The Fellowship of the Ring",
-    "J.R.R. Tolkien",
-    500,
-    false,
-    "https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif"
-  ),
-  new Book(
-    "The Fellowship of the Ring",
-    "J.R.R. Tolkien",
-    500,
-    true
-  ),
+  new Book("The Fellowship of the Ring", "J.R.R. Tolkien", 500, false),
+  new Book("The Fellowship of the Ring", "J.R.R. Tolkien", 500, true),
 ];
 
-function Book(title, author, pages, finished, imageSource = "") {
+function Book(title, author, pages, finished) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.finished = finished;
-  this.imageSource = imageSource;
 }
 
 function addBookToLibrary(book) {
@@ -59,8 +47,8 @@ function createTableRowFromBook(book, index) {
   thumbnailCell.classList.add("thumbnail");
 
   const img = document.createElement("img");
-  img.width = 128;
-  img.src = book.imageSource;
+  img.width = 64;
+  img.src = ""
 
   thumbnailCell.appendChild(img);
 
