@@ -20,6 +20,11 @@ function deleteBookFromLibrary(bookIndex) {
   displayBooksFromLibrary();
 }
 
+function toggleBookReadStatus(bookIndex, btn) {
+  myLibrary[bookIndex].finished = !myLibrary[bookIndex].finished;
+  btn.textContent = myLibrary[bookIndex].finished ? "Read" : "Not Read";
+}
+
 const tableBody = document.querySelector("tbody");
 
 function displayBooksFromLibrary() {
@@ -80,6 +85,9 @@ function createTableRowFromBook(book, index) {
   const readBtn = document.createElement("button");
   readBtn.classList.add("read-btn");
   readBtn.textContent = book.finished ? "Read" : "Not Read";
+  readBtn.addEventListener("click", () => {
+    toggleBookReadStatus(index, readBtn);
+  });
 
   readCell.appendChild(readBtn);
 
