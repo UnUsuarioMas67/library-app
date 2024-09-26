@@ -107,4 +107,10 @@ function createTableRowFromBook(book, index) {
   return tableRow;
 }
 
+const dialog = document.querySelector("dialog");
+const addBtn = document.querySelector("#add-btn");
+
 window.addEventListener("load", displayBooksFromLibrary);
+addBtn.addEventListener("click", () => {
+  dialog.showModal();
+});
