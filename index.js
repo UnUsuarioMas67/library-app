@@ -3,10 +3,10 @@ const myLibrary = [
   new Book("Atomic Habits", "James Clear", 320, true),
 ];
 
-function Book(title, author, pages, finished) {
+function Book(title, author, pageCount, finished) {
   this.title = title;
   this.author = author;
-  this.pages = pages;
+  this.pageCount = pageCount;
   this.finished = finished;
 }
 
@@ -43,7 +43,7 @@ function createTableRowFromBook(book, index) {
   //   </td>
   //   <td class="title">The Fellowship of the Ring</td>
   //   <td class="author">J.R.R. Tolkien</td>
-  //   <td class="pages">500</td>
+  //   <td class="page-count">500</td>
   //   <td>
   //     <button class="read-btn">Not Read</button>
   //   </td>
@@ -75,10 +75,10 @@ function createTableRowFromBook(book, index) {
   authorCell.classList.add("author");
   authorCell.textContent = book.author;
 
-  // Pages
+  // Page Count
   const pagesCell = document.createElement("td");
-  pagesCell.classList.add("pages");
-  pagesCell.textContent = book.pages;
+  pagesCell.classList.add("page-count");
+  pagesCell.textContent = book.pageCount;
 
   // Toggle Read Button
   const readCell = document.createElement("td");
@@ -128,15 +128,15 @@ addBtn.addEventListener("click", () => {
 form.addEventListener("submit", () => {
   const titleInput = document.querySelector("#title");
   const authorInput = document.querySelector("#author");
-  const pagesInput = document.querySelector("#pages");
+  const pagesInput = document.querySelector("#page-count");
   const finishedInput = document.querySelector("#finished");
 
   const title = titleInput.value;
   const author = authorInput.value;
-  const pages = pagesInput.value;
+  const pageCount = pagesInput.value;
   const finished = finishedInput.checked;
 
-  const book = new Book(title, author, pages, finished);
+  const book = new Book(title, author, pageCount, finished);
 
   titleInput.value = "";
   authorInput.value = "";
