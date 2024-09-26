@@ -110,10 +110,10 @@ addBtn.addEventListener("click", () => {
 });
 
 form.addEventListener("submit", () => {
-  const titleInput = form.querySelector("#title").value;
-  const authorInput = form.querySelector("#author").value;
-  const pagesInput = form.querySelector("#pages").value;
-  const finishedInput = form.querySelector("#finished").checked;
+  const titleInput = document.querySelector("#title");
+  const authorInput = document.querySelector("#author");
+  const pagesInput = document.querySelector("#pages");
+  const finishedInput = document.querySelector("#finished");
 
   const title = titleInput.value;
   const author = authorInput.value;
@@ -121,6 +121,11 @@ form.addEventListener("submit", () => {
   const finished = finishedInput.checked;
 
   const book = new Book(title, author, pages, finished);
+
+  titleInput.value = "";
+  authorInput.value = "";
+  pagesInput.value = "";
+  finishedInput.checked = false;
 
   addBookToLibrary(book);
 });
