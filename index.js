@@ -15,6 +15,11 @@ function addBookToLibrary(book) {
   displayBooksFromLibrary();
 }
 
+function deleteBookFromLibrary(bookIndex) {
+  myLibrary.splice(bookIndex, 1);
+  displayBooksFromLibrary();
+}
+
 const tableBody = document.querySelector("tbody");
 
 function displayBooksFromLibrary() {
@@ -83,6 +88,9 @@ function createTableRowFromBook(book, index) {
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("delete-btn");
   deleteBtn.textContent = "X";
+  deleteBtn.addEventListener("click", () => {
+    deleteBookFromLibrary(index);
+  });
 
   deleteCell.appendChild(deleteBtn);
 
