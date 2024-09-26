@@ -51,7 +51,7 @@ function createTableRowFromBook(book, index) {
 
   const img = document.createElement("img");
   img.width = 64;
-  img.src = ""
+  img.src = "";
 
   thumbnailCell.appendChild(img);
 
@@ -101,6 +101,7 @@ function createTableRowFromBook(book, index) {
 const dialog = document.querySelector("dialog");
 const addBtn = document.querySelector("#add-btn");
 const form = document.querySelector("form");
+const closeBtn = document.querySelector("#close-btn");
 
 window.addEventListener("load", displayBooksFromLibrary);
 
@@ -113,7 +114,7 @@ form.addEventListener("submit", () => {
   const authorInput = form.querySelector("#author").value;
   const pagesInput = form.querySelector("#pages").value;
   const finishedInput = form.querySelector("#finished").checked;
-  
+
   const title = titleInput.value;
   const author = authorInput.value;
   const pages = pagesInput.value;
@@ -122,4 +123,8 @@ form.addEventListener("submit", () => {
   const book = new Book(title, author, pages, finished);
 
   addBookToLibrary(book);
+});
+
+closeBtn.addEventListener("click", () => {
+  dialog.close();
 });
