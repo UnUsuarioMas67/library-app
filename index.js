@@ -1,6 +1,6 @@
 const myLibrary = [
   new Book("The Fellowship of the Ring", "J.R.R. Tolkien", 500, false),
-  new Book("The Fellowship of the Ring", "J.R.R. Tolkien", 500, true),
+  new Book("Atomic Habits", "James Clear", 320, true),
 ];
 
 function Book(title, author, pages, finished) {
@@ -12,11 +12,14 @@ function Book(title, author, pages, finished) {
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
+  displayBooksFromLibrary();
 }
 
 const tableBody = document.querySelector("tbody");
 
 function displayBooksFromLibrary() {
+  tableBody.textContent = "";
+
   myLibrary.forEach((book, index) => {
     tableBody.appendChild(createTableRowFromBook(book, index));
   });
@@ -97,8 +100,26 @@ function createTableRowFromBook(book, index) {
 
 const dialog = document.querySelector("dialog");
 const addBtn = document.querySelector("#add-btn");
+const form = document.querySelector("form");
 
 window.addEventListener("load", displayBooksFromLibrary);
+
 addBtn.addEventListener("click", () => {
   dialog.showModal();
+});
+
+form.addEventListener("submit", () => {
+  const titleInput = form.querySelector("#title").value;
+  const authorInput = form.querySelector("#author").value;
+  const pagesInput = form.querySelector("#pages").value;
+  const finishedInput = form.querySelector("#finished").checked;
+  
+  const title = titleInput.value;
+  const author = authorInput.value;
+  const pages = pagesInput.value;
+  const finished = finishedInput.checked;
+
+  const book = new Book(title, author, pages, finished);
+
+  addBookToLibrary(book);
 });
