@@ -28,6 +28,11 @@ input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }
 
+body {
+  background-color: #f5f5f4;
+  height: 100vh;
+}
+
 .page-top {
   display: flex;
   flex-direction: column;
@@ -74,4 +79,45 @@ h1 {
 
 .attribution > a {
   color: white;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+thead tr {
+  border-bottom: 2px solid black;
+}
+
+.col-title {
+  width: 20rem;
+}
+
+.col-author {
+  width: 10rem;
+}
+
+th {
+  padding: 0.5rem;
+}
+
+td {
+  padding: 1rem;
+}
+
+td:first-child {
+  border-radius: 15px 0 0 15px;
+}
+
+td:last-child {
+  border-radius: 0 15px 15px 0;
+}
+
+td:not(.title) {
+  text-align: center;
+}
+
+tr:nth-child(odd) td {
+  background-color: #e7e5e4;
 }

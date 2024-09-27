@@ -20,13 +20,23 @@
     </div>
 
     <table>
+      <colgroup>
+        <col>
+        <col class="col-title">
+        <col class="col-author">
+        <col class="col-page-count">
+        <col class="col-status">
+        <col>
+      </colgroup>
       <thead>
-        <th></th>
-        <th scope="col">Title</th>
-        <th scope="col">Author</th>
-        <th scope="col">Page Count</th>
-        <th scope="col">Status</th>
-        <th></th>
+        <tr>
+          <th></th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Page Count</th>
+          <th scope="col">Status</th>
+          <th></th>
+        </tr>
       </thead>
 
       <tbody>
@@ -39,7 +49,7 @@
           <td class="author">J.R.R. Tolkien</td>
           <td class="page-count">500</td>
           <td>
-            <button class="toggle-read-btn">Not Read</button>
+            <button class="toggle-read-btn not-read">Not Read</button>
           </td>
           <td>
             <button class="delete-btn">X</button>
