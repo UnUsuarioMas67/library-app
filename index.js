@@ -98,12 +98,16 @@ function createTableRowFromBook(book, index) {
   // Delete Butotn
   const deleteCell = document.createElement("td");
   const deleteBtn = document.createElement("button");
+  const deleteIcon = document.createElement("img");
+
+  deleteIcon.src = "assets/icons/window-close.svg";
+  deleteIcon.width = 32;
   deleteBtn.classList.add("delete-btn");
-  deleteBtn.textContent = "X";
   deleteBtn.addEventListener("click", () => {
     deleteBookFromLibrary(index);
   });
 
+  deleteBtn.appendChild(deleteIcon);
   deleteCell.appendChild(deleteBtn);
 
   // END

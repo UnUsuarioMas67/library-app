@@ -136,3 +136,16 @@ tr:nth-child(odd) td {
   background-color: #fecaca;
   color: #dc2626;
 }
+
+.delete-btn {
+  display: flex;
+  align-items: center;
+
+  background: none;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+
+.delete-btn:hover {
+  border-color: rgba(0, 0, 0, 0.5);
+}
