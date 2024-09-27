@@ -61,7 +61,7 @@ function createTableRowFromBook(book, index) {
 
   const img = document.createElement("img");
   img.width = 64;
-  img.src = "";
+  img.src = "assets/images/Buecher-coloured.svg";
 
   thumbnailCell.appendChild(img);
 
