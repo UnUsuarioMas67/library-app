@@ -83,10 +83,11 @@ h1 {
 
 table {
   margin: auto;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
 }
 
-thead tr {
+th {
   border-bottom: 2px solid black;
 }
 
@@ -104,6 +105,7 @@ th {
 
 td {
   padding: 1rem;
+  background-color: #e7e5e4;
 }
 
 td:first-child {
@@ -116,10 +118,6 @@ td:last-child {
 
 td:not(.title) {
   text-align: center;
-}
-
-tr:nth-child(odd) td {
-  background-color: #e7e5e4;
 }
 
 .read-btn {
