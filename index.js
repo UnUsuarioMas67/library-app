@@ -1,14 +1,21 @@
+class Book {
+  title;
+  author;
+  pageCount;
+  finished;
+
+  constructor(title, author, pageCount, finished) {
+    this.title = title;
+    this.author = author;
+    this.pageCount = pageCount;
+    this.finished = finished;
+  }
+}
+
 const myLibrary = [
   new Book("The Fellowship of the Ring", "J.R.R. Tolkien", 500, false),
   new Book("Atomic Habits", "James Clear", 320, true),
 ];
-
-function Book(title, author, pageCount, finished) {
-  this.title = title;
-  this.author = author;
-  this.pageCount = pageCount;
-  this.finished = finished;
-}
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
